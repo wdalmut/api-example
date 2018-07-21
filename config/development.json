@@ -1,0 +1,17 @@
+{
+  "db":  {
+    "host": "db",
+    "dialect": "mysql",
+    "username": "root",
+    "password": "root",
+    "database": "app",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    },
+    "operatorsAliases": false,
+    "migrationStorageTableName": "migrations"
+  }
+}

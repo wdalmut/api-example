@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    command: ./node_modules/.bin/forever -w src/index.js
+    volumes:
+      - .:/data
+    working_dir: /data
+    environment:
+      - NODE_ENV=development
+  db:
+    image: mysql:5.6
+    ports:
+      - 3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root

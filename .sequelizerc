@@ -1,0 +1,6 @@
+const path = require('path');
+
+module.exports = {
+  'config': path.join(__dirname, '/config/load.js'),
+  'migrations-path': path.resolve('priv', 'migrations'),
+}

@@ -1,0 +1,42 @@
+{
+  "name": "api-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "serve": "docker-compose up -d",
+    "db": "docker-compose run -e NODE_ENV=${NODE_ENV, development} --rm web ./node_modules/.bin/sequelize $@",
+    "logs": "docker-compose logs -f --tail=10 web",
+    "mysql": "docker-compose exec db mysql -h 127.0.0.1 -uroot -p",
+    "test": "docker-compose run -e NODE_ENV=test --rm web ./node_modules/.bin/jasmine $@",
+    "start": "NODE_ENV=production node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wdalmut/basic-auth": "0.0.1",
+    "@wdalmut/mini-auth": "0.0.2",
+    "@wdalmut/one-of": "0.0.1",
+    "@wdalmut/token-auth": "0.0.1",
+    "body-parser": "^1.18.2",
+    "config": "^1.30.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-joi-validation": "^0.2.1",
+    "install": "^0.10.4",
+    "joi": "^13.2.0",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.5.2",
+    "npm": "^5.7.1",
+    "ramda": "^0.25.0",
+    "sequelize": "^4.35.2",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "forever": "^0.15.3",
+    "jasmine": "^3.1.0",
+    "mock-require": "^3.0.2",
+    "sequelize-fixtures": "^0.7.0",
+    "supertest": "^3.0.0"
+  }
+}
